@@ -1,0 +1,114 @@
+set nocompatible  " Use Vim settings, rather then Vi settings
+set nobackup
+set nowritebackup
+set history=50
+set ruler         " show the cursor position all the time
+set showcmd       " display incomplete commands
+set incsearch     " do incremental searching
+set laststatus=2  " Always display the status line
+
+" Get off my lawn
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
+
+" Vundle
+filetype off " Required for Vundle!
+" set rtp+=~/.vim/bundle/vundle
+" call vundle#rc()
+" Bundle 'gmarik/vundle'
+
+" Bundle 'godlygeek/tabular'
+" Bundle 'ack.vim'
+" Bundle 'Sporky023/vim-flavored-markdown'
+
+function! s:Vimrc()
+  call s:OpenSplitsAfterCurrent()
+  call s:TabToEscapeInsertMode()
+  call s:Softtabs2()
+  call s:VisualAppearance()
+  call s:AllowPluginsToSetIndentRules()
+  call s:UseGhMarkdown()
+
+  call s:LeaderIsComma()
+  call s:LeaderComment()
+  call s:LeaderSave()
+  call s:LeaderBreakupLine()
+  call s:LeaderForCtrlP()
+endfunction
+
+function! s:OpenSplitsAfterCurrent()
+  set splitright
+  set splitbelow
+endfunction
+
+function! s:TabToEscapeInsertMode()
+  imap <Tab> <Esc>
+endfunction
+
+function! s:Softtabs2()
+  set tabstop=2
+  set softtabstop=2
+  set shiftwidth=2
+  set expandtab
+endfunction
+
+function! s:VisualAppearance()
+  set colorcolumn=81
+  colorscheme blue
+endfunction
+
+function! s:AllowPluginsToSetIndentRules()
+  filetype on
+  filetype plugin on
+  filetype indent on
+endfunction
+
+function! s:UseGhMarkdown()
+  augroup markdown
+    au!
+    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+  augroup END
+endfunction
+
+function! s:LeaderIsComma()
+  let g:mapleader = ','
+endfunction
+
+function! s:LeaderComment()
+  vmap <Leader>c :TComment<CR>
+  map <Leader>c  :TComment<CR>
+endfunction
+
+function! s:LeaderSave()
+  map <Leader>i :w<CR>
+  nmap <Leader><Leader> :w<CR>
+endfunction
+
+function! s:LeaderBreakupLine()
+  call s:LeaderBreakupLineOnComma()
+  call s:LeaderBreakupLineOnBrackets()
+  call s:LeaderBreakupLineOnParens()
+endfunction
+
+function! s:LeaderBreakupLineOnComma()
+  nmap <Leader>f 0f,a<CR><Esc>
+endfunction
+
+function! s:LeaderBreakupLineOnBrackets()
+  nmap <Leader>g 0/[[{]<CR>a<CR><Esc>k0/[[{]<CR>%i<CR><Esc>:s/ *$//<CR>0/[}\]]<CR>%j0
+endfunction
+
+function! s:LeaderBreakupLineOnParens()
+  nmap <Leader>v f(a<CR><Esc>k$%i<CR><Esc>f)%j^
+endfunction
+
+function! s:LeaderForCtrlP()
+  nmap <Leader>ae :CtrlP<CR>
+  nmap <Leader>av :vs<CR>:CtrlP<CR>
+  nmap <Leader>as :sp<CR>:CtrlP<CR>
+  nmap <Leader>at :tabe<CR>:CtrlP<CR>
+endfunction
+
+call s:Vimrc()
