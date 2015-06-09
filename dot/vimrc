@@ -16,13 +16,15 @@ nnoremap <Down> :echoe "Use j"<CR>
 
 " Vundle
 filetype off " Required for Vundle!
-" set rtp+=~/.vim/bundle/vundle
-" call vundle#rc()
-" Bundle 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Bundle 'gmarik/Vundle.vim'
 
 " Bundle 'godlygeek/tabular'
 " Bundle 'ack.vim'
 " Bundle 'Sporky023/vim-flavored-markdown'
+
+call vundle#end()
 
 function! s:Vimrc()
   call s:OpenSplitsAfterCurrent()
