@@ -1,3 +1,5 @@
+require 'fileutils'
+
 def main
   puts "starting"
   install_each_dot_item_via_symlink
