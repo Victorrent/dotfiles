@@ -20,6 +20,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Bundle 'gmarik/Vundle.vim'
 
+Bundle 'kien/ctrlp.vim'
 " Bundle 'godlygeek/tabular'
 " Bundle 'ack.vim'
 " Bundle 'Sporky023/vim-flavored-markdown'
