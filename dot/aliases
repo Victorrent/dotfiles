@@ -1,0 +1,10 @@
+alias saver="clear; ls -l ~; sleep 7; open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"
+alias serve="ruby -run -e httpd . -p 9090"
+
+alias g="git status"
+alias ga="git add -A"
+alias gb="clear && git branch -a"
+alias gcm="git commit -m"
+alias gd="git diff"
+alias gdc="git diff --cached"
+alias gl="git log -10 --pretty=oneline"
