@@ -22,6 +22,7 @@ Bundle 'gmarik/Vundle.vim'
 
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-eunuch'
 " Bundle 'godlygeek/tabular'
 " Bundle 'ack.vim'
 " Bundle 'Sporky023/vim-flavored-markdown'
