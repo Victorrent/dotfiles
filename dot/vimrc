@@ -34,6 +34,7 @@ function! s:Vimrc()
   call s:VisualAppearance()
   call s:AllowPluginsToSetIndentRules()
   call s:UseGhMarkdown()
+  call s:NonGreedyTabCompletion()
 
   call s:LeaderIsComma()
   call s:LeaderComment()
@@ -74,6 +75,11 @@ function! s:UseGhMarkdown()
     au!
     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
   augroup END
+endfunction
+
+function! s:NonGreedyTabCompletion()
+  set wildmode=longest,list,full
+  set wildmenu
 endfunction
 
 function! s:LeaderIsComma()
