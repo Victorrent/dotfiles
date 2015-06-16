@@ -61,7 +61,7 @@ endfunction
 
 function! s:VisualAppearance()
   set colorcolumn=81
-  colorscheme blue
+  colorscheme darkblue
 endfunction
 
 function! s:AllowPluginsToSetIndentRules()
