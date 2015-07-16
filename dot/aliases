@@ -1,6 +1,8 @@
 alias saver="clear; ls -l ~; sleep 7; open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app"
 alias serve="ruby -run -e httpd . -p 9090"
 
+alias be='bundle exec'
+
 alias g="git status"
 alias ga="git add -A"
 alias gb="clear && git branch -a"
