@@ -47,7 +47,6 @@ function! s:Vimrc()
   call s:LeaderSave()
   call s:LeaderBreakupLine()
   call s:LeaderForCtrlP()
-  call s:useDoubleAsteriskInGrepForRecursive()
 endfunction
 
 function! s:OpenSplitsAfterCurrent()
@@ -126,11 +125,6 @@ function! s:LeaderForCtrlP()
   nmap <Leader>av :vs<CR>:CtrlP<CR>
   nmap <Leader>as :sp<CR>:CtrlP<CR>
   nmap <Leader>at :tabe<CR>:CtrlP<CR>
-endfunction
-
-function! s:useDoubleAsteriskInGrepForRecursive()
-  " http://unix.stackexchange.com/questions/172275/vim-grep-using-the-bash-globstar-option
-  set shell+=\ -O\ globstar
 endfunction
 
 call s:Vimrc()
