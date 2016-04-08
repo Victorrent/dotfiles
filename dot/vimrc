@@ -34,6 +34,7 @@ Bundle 'stanangeloff/php.vim'
 call vundle#end()
 
 function! s:Vimrc()
+  call s:UseSyntaxHighlighting()
   call s:OpenSplitsAfterCurrent()
   call s:TabToEscapeInsertMode()
   call s:Softtabs2()
@@ -47,6 +48,10 @@ function! s:Vimrc()
   call s:LeaderSave()
   call s:LeaderBreakupLine()
   call s:LeaderForCtrlP()
+endfunction
+
+function! s:UseSyntaxHighlighting()
+  syntax on
 endfunction
 
 function! s:OpenSplitsAfterCurrent()
