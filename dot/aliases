@@ -11,3 +11,4 @@ alias gd="git diff"
 alias gdc="git diff --cached"
 alias gl="git log -10 --pretty=oneline"
 alias gco="git checkout"
+
